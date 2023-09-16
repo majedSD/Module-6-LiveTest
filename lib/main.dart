@@ -1,5 +1,5 @@
 /**------------------MAJEDUL ISLAM-----------------
- * ------------------MODULE-5-ASSIGNMENT-----------
+ * ------------------MODULE-6-LIVETEST-----------
  */
 import 'package:flutter/material.dart';
 void main(){
@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
         home: HomeActivity());
   }
 }
@@ -20,34 +21,35 @@ class HomeActivity extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 100,
-        elevation: 70,
-        title: Text('Home'),
+        title: Text('My Shoping List'),
         centerTitle: true,
-        leading: Icon(Icons.add_business),
-        backgroundColor: Colors.green,
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.search))
+          IconButton(onPressed: (){}, icon: Icon(Icons.add_shopping_cart))
         ],
       ),
-      body: Center(
-          child:Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('This is mod 5 Assignment',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-              RichText(text: TextSpan(
-                  children:[
-                    TextSpan(text: 'My ',style: TextStyle(color: Colors.pink,fontSize: 30),),
-                    TextSpan(text: 'phone ',style: TextStyle(color: Colors.lightBlue),),
-                    TextSpan(text: 'name ',style: TextStyle(color: Colors.purpleAccent,fontSize: 20),),
-                    TextSpan(text: 'Your phone name ',style: TextStyle(color: Colors.orangeAccent,fontSize: 30),),
-                  ]
-              )
-
-              ),
-
-            ],
+      body: ListView(
+        children: [
+          ListTile(
+          title: Text('Apples'),
+            leading: Icon(Icons.apple),
+          ),
+          ListTile(
+            title: Text('Android'),
+            leading: Icon(Icons.android),
+          ),
+          ListTile(
+            title: Text('Message'),
+            leading: Icon(Icons.message),
+          ),
+          ListTile(
+            title: Text('Email'),
+            leading: Icon(Icons.email),
+          ),
+          ListTile(
+            title: Text('Person'),
+            leading: Icon(Icons.person),
           )
+        ],
       ),
     );
 
